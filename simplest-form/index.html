@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simplest Form</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+  </head>
+  <body>
+
+    <h1 style="margin-left: 25px">The Simplest Form</h1>
+    <p id="p"style="margin-left: 30px">check console for submit log</p>
+
+    <form id="form">
+        <input
+          id="input"
+          type="text"
+          style="margin-left: 30px"
+          placeholder="type anything" />
+          
+        <button onclick="handle(event)">Submit</button>
+    
+      </form>
+      <script>
+
+        function handle(e){
+            e.preventDefault();
+            console.log(e.target.form.elements)
+            console.log(e.target.form.elements.input.value)
+            document.getElementById("form").reset()
+        }
+
+      </script>
+
+  </body>
+</html>
