@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Compare Binary and Linear Search Performance</title>
+  </head>
+  
+  <body>
+    <script>
+    let input;
+    
+    function handle(e){
+        input = e.target.form.elements.input.value
+        e.preventDefault();
+        console.log(e.target.form.elements)
+        console.log(e.target.form.elements.input.value)
+        document.getElementById("form").reset()
+        return input; 
+    }   
+    let arr = []; 
+let low = 0; 
+let n = 456; 
+
+
+
+for(let i=0; i < 1023; i++){
+    arr.push(i);
+}
+
+let high = arr.length-1; 
+
+function bS(arr, n, low, high) { 
+    console.log(arr.slice(low, high))
+    if (low > high){
+        return console.log('not found');
+    }  
+    
+    let mid = (low + high) / 2;
+    let M = Math.floor(mid)
+    if (arr[M] === n){ 
+        return console.log('found:', arr[M]); 
+    } 
+
+    else if (n < arr[M]) {
+        return bS(arr, n, low, M-1)
+    } 
+
+    else if (n > arr[M]) {
+         return bS(arr, n, M+1, high)
+    }
+    else return 
+}
+
+
+bS(arr, n, low, high)
+  
+
+    </script>
+    
+  
+    
+    <h1 style="margin-left: 25px">Binary V. Linear Search</h1>
+    <p id="p"style="margin-left: 30px">see the results</p>
+    <form id="form">
+        <input
+          id="input"
+          type="text"
+          style="margin-left: 30px"
+          placeholder="type anything" />
+          
+        <button onclick="handle(event)">Submit</button>
+    
+      </form>
+
+   
+    <div id='number-searching-for-id'>
+      Letter to search for:
+    </div>
+    <br>
+    <div id='searched-array-id'>
+      Alphabet array to search inside:
+    </div>
+    <br>
+    <div id='linear-search-results'>
+      Linear Search Iterations:
+    </div>
+    <div id='linear-search-position'>
+      Index of the searched Character found by Linear Search:
+    </div>
+    <br>
+    <div id='binary-search-results'>
+      Binary Search Iterations:
+    </div>
+    <div id='binary-search-position'>
+      Index of the searched Character found by Binary Search:
+    </div> 
+
+  </body>
+</html>

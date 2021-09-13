@@ -22,14 +22,25 @@
         <button onclick="handle(event)">Submit</button>
     
       </form>
+      <ul class="content" id="target" style="margin-top: 25px;"></ul>
       <script>
+        function render(str){
+          var li = document.createElement("li"); 
+          li.innerText = str
+          document.getElementById("render").appendChild(li)
+        }
 
         function handle(e){
             e.preventDefault();
             console.log(e.target.form.elements)
             console.log(e.target.form.elements.input.value)
+           
+            var input = e.target.form.elements.input.value 
+            render(input)
+
             document.getElementById("form").reset()
         }
+
 
       </script>
 
