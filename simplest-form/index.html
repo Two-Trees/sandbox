@@ -10,7 +10,6 @@
   <body>
 
     <h1 style="margin-left: 25px">The Simplest Form</h1>
-    <p id="p"style="margin-left: 30px">check console for submit log</p>
 
     <form id="form">
         <input
@@ -27,7 +26,7 @@
         function render(str){
           var li = document.createElement("li"); 
           li.innerText = str
-          document.getElementById("render").appendChild(li)
+          document.getElementById("target").appendChild(li)
         }
 
         function handle(e){
